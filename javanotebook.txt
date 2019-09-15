@@ -136,5 +136,49 @@ Java Notes
 				1. E element(); 队列为空 throw exception
 				2. E peek()； 队列为空 返回null，不要添加null进队列
 
+	5. PriorityQueue<E> 放入其中的元素必须实现Comparable接口
+
+		1. 实现类 Implements class:
+			1. PriorityQueue
+				Queue<E> q = new PriorityQueue<>(new UserComparator());
+				实现Comparable接口
+				class UserComparator implements Comparator<E>{
+					public int compare(E e1, E e2){
+						return -1 e1 smaller
+								0 same
+								1 e1 larger
+					}
+				}
+
+		2. 方法 Methods:
+			Same as Queue.
+
+	6. Deque<E> Double Ended Queue
+
+		1. 实现类 Implements class:
+			1. LinkedList
+				Deque<E> deque = new LinkedList<>();
+
+		2. 方法 Methods:
+			1. 添加元素到队首
+				addFirst(E e) 如果超过大小throw exception
+				offerFirst(E e) 如果超过大小返回false
+			2. 添加元素到队尾
+				addLast(E e) 如果超过大小throw exception
+				offerLast(E e) 如果超过大小返回 false
+			3. 取队队首元素并删除
+				E removeFirst() 如果空throw exception
+				E pollFirst() 如果空返回false
+			4. 取队首元素不删除
+				E getFirst() 如果空throw exception
+				E peekFirst() 如果空返回false
+			5. 取队尾元素并删除
+				E removeLast() 如果空throw exception
+				E pollLast() 如果空返回false
+			6. 取队尾元素不删除
+				E getLast() 如果空throw exception
+				E peeklast() 如果空返回false
+
+
 
 
