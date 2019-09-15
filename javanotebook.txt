@@ -117,5 +117,24 @@ Java Notes
 				for(E e : map){
 				}
 
+	4. Queue<E> FIFO 先进先出
+
+		1. 实现类 Implements class:
+			1. LinkedList
+				Queue<E> q = new LinkedList<>();
+
+		2. 常用方法 Methods:
+			1. 获取队列长度
+				int size();
+			2. 添加元素到队尾
+				1. boolean add(E e); 超出队列长度 throw exception
+				2. boolean offer(E e); 超出队列长度 返回 false
+			3. 获取队首元素并从队列中删除
+				1. E remove(); 队列为空 throw exception
+				2. E poll(); 队列为空 返回 null，不要添加null进队列
+			3. 获取队首元素但不删除
+				1. E element(); 队列为空 throw exception
+				2. E peek()； 队列为空 返回null，不要添加null进队列
+
 
 
